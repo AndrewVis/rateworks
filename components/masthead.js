@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 
 export default class Masthead extends React.Component {
   render() {
@@ -19,9 +19,6 @@ export default class Masthead extends React.Component {
           <h1 className="mb-6 text-4xl xl:text-5xl">Rate Works</h1>
           <h2 className="mb-2 text-2xl xl:text3xl tracking-tight">
             <span>Communication,</span>{' '}<span>Simplified</span>
-            <Link href="/broker">
-              <a>Go to broker page</a>
-            </Link>
           </h2>
         </div>
          <div className="colour:black flex-grow-0 pb-20 md:pb-10 transition-all duration-1000">
