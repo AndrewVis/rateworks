@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Masthead from '../components/masthead'
-import Signin from '../components/signin'
+import Aboutus from '../components/aboutus'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <Masthead />
-      <Signin />
+      <Aboutus />
     
       
       <footer className={styles.footer}>
