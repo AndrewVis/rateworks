@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Masthead from '../components/masthead'
 import Aboutus from '../components/aboutus'
+import Contact from '../components/contact'
 
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
 
       <Masthead />
       <Aboutus />
+      <Contact />
     
       
       <footer className={styles.footer}>
