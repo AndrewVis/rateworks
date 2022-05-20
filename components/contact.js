@@ -4,8 +4,8 @@ import Image from 'next/image'
 export default class Contact extends React.Component {
   render() {
       return (
-        <div className="bg-black text-white flex flex-col justify-center items-center pt-10 min-h-screen">
-          <div className="flex-1 flex flex-col justify-center items-center pt=10 lg:pt-6"></div>
+        <div className="bg-black text-white flex flex-col justify-center pt-10 min-h-screen">
+          <div className="flex-1 flex flex-col justify-center items-center pt=10 lg:pt-6">
           <div className="pb-10">
           <Image src="/assets/logo.png" width={115} height={115} alt="logo" />
           </div>
@@ -33,6 +33,7 @@ export default class Contact extends React.Component {
               </button>
             </div>
           </form>
+          </div>
         </div>
       )
   }

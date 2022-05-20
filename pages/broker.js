@@ -3,14 +3,25 @@ import Image from "next/image";
 import { useState } from 'react';
 import { createClient } from "@supabase/supabase-js";
 
-// function cn(...classes: []) {
-//   return classes.filter(Boolean).join('')
-// }
 
+export async function getStaticProps() {
 const supabaseAdmin = createClient (
   process.env.NEXT_PUBLIC_SUPABASE_URL || '',
   process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 )
+const { data } = await supabaseAdmin
+.from('Rates')
+.select('*')
+.order('id');
+console.log(data)
+return {
+  props: {
+    images: data,
+  },
+  }
+}
+
+
 
 
 export default class Gallery extends React.Component {
