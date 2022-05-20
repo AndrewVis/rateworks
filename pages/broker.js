@@ -1,32 +1,50 @@
 import React from "react";
+import Image from "next/image";
+import { useState } from 'react';
+import { createClient } from "@supabase/supabase-js";
+
+// function cn(...classes: []) {
+//   return classes.filter(Boolean).join('')
+// }
+
+const supabaseAdmin = createClient (
+  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+  process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+)
 
 
-
-
-export default class Masthead extends React.Component {
+export default class Gallery extends React.Component {
   render() {
     return (
-      <section className={'flex flex-col bg-white text-center mx-auto px-11 mt-28 text-5xl md:text-4xl'}>
-        <div className={'container mx-auto px-11'}>
+      <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+        <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <BlurImage />
         </div>
-        <div className={'container mx-auto px-11 text-center mt-28'}>
-       <h2>Broker landing page</h2>
-       <div className="mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-20">
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 1</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 2</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 3</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 4</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 5</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 6</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 7</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 8</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 9</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 10</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 11</button>
-         <button className=" bg-slate-300 hover:bg-slate-400 active:bg-slate-500 focus:outline-none focus:ring focus:ring-slate-700"> Rate 12</button>
-        </div>
-       </div>
-       </section>
+      </div>
     );
   }
+}
+
+function BlurImage () {
+  const [isLoading, setLoading] = useState(true)
+  return (
+    <a href="#" className="group">
+      <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200">
+        <Image alt=""
+        src="/assets/logo.png"
+        layout="fill"
+        objectFit="cover"
+        className={(
+        "group-hover:opacity-75 duration-700 ease-in-out",
+        isLoading
+        ? 'greyscale blur-2xl scale-110'
+        : 'greyscale-0 blur-0 scale-100'
+        )}
+        onLoadingComplete={() => setLoading(false)}
+      />
+      </div>
+      <h3 className="mt-4 text-sm text-gray-700"></h3>
+      <p className="mt-1 text-lg font-medium text-gray-700"></p>
+    </a>
+  )
 }
