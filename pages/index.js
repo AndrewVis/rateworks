@@ -4,7 +4,6 @@ import Masthead from '../components/masthead'
 import Aboutus from '../components/aboutus'
 import Contact from '../components/contact'
 
-
 export default function Home() {
   return (
     <div className={styles.container}>

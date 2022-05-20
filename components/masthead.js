@@ -1,27 +1,11 @@
-import React, { useRef, useContext } from 'react';
-import { ScrollContext } from '../utils/scroll-observer'
-import MyApp from '../pages/_app';
+import React from "react";
+import Image from "next/image";
+// import Link from "next/link";
 
 export default class Masthead extends React.Component {
-
-
-    render(
-    ){
-      const refContainer = useRef<HTMLDivElement>(null)
-      const { scrollY } = useContext(ScrollContext)
-  
-      let progress = 0
-  
-      const { current: elContainer} = refContainer
-      if (elContainer) {
-        progress = Math.min(1, scrollY / elContainer.clientHeight)
-      
+  render() {
     return (
-      <div ref={refContainer} className="min-h-screen flex flex-col items-center justify-center sticky top-0 -z-10"
-         style={{
-           transform:`translateY(-${progress * 20}vh)`
-         }}      
-      >
+      <div className="min-h-screen flex flex-col items-center justify-center">
          <video 
          autoPlay 
          loop 
@@ -37,11 +21,15 @@ export default class Masthead extends React.Component {
           <h2 className="mb-2 text-3xl xl:text3xl tracking-tight">
             <span>Communication,</span>{' '}<span>Simplified</span>
           </h2>
+          {/* <div className="flex-grow-0 pb-20 md:pb-10 transition-all duration-1000">
+           <Image src="/assets/drop-down-arrow.png" 
+           width={188 / 3 } 
+           height={105 / 3 } 
+           alt="scroll down" />
+         </div> */}
         </div> 
       </div>
       </div>
     );
 }
 }
-}
-
