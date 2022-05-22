@@ -24,7 +24,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by Andrew :)
+          Powered by 
          
         </a>
       </footer>
