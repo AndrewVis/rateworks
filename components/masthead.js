@@ -22,9 +22,7 @@ export default class Masthead extends React.Component {
             <span>Communication,</span>{' '}<span>Simplified</span>
           </h2>
         <div className="flex flex-col gap-4 mt-16 px-10 text-3xl">
-          <div className="">
           <button type="submit" className=" text-white  hover:bg-zinc-600 outline-none border-2 border-white rounded-3xl px-8 py-2">Sign in</button>
-          </div>
           <button type="submit" className=" text-white  hover:bg-zinc-600 outline-none border-2 border-white rounded-3xl px-8 py-2">Sign up</button>
         </div>
         </div>
