@@ -12,7 +12,7 @@ export default class Masthead extends React.Component {
          muted 
          playsInline 
          className="absolute w-full h-full object-cover">
-          <source src="/assets/bg-video.mp4" type="video/mp4;" />
+          <source src="/assets/videobg.mp4" type="video/mp4;" />
          </video>
         <div className="flex flex-col items-center justify-center">
              <Image src="/assets/logo.png" width={115} height={115} alt="logo" />
@@ -21,14 +21,14 @@ export default class Masthead extends React.Component {
           <h2 className="mb-2 text-3xl xl:text3xl tracking-tight">
             <span>Communication,</span>{' '}<span>Simplified</span>
           </h2>
-          {/* <div className="flex-grow-0 pb-20 md:pb-10 transition-all duration-1000">
-           <Image src="/assets/drop-down-arrow.png" 
-           width={188 / 3 } 
-           height={105 / 3 } 
-           alt="scroll down" />
-         </div> */}
-        </div> 
-      </div>
+        <div className="flex flex-col gap-4 mt-16 px-10 text-3xl">
+          <div className="">
+          <button type="submit" className=" text-white  hover:bg-gray-400 outline-none border-2 border-white rounded-3xl px-8 py-2">Sign in</button>
+          </div>
+          <button type="submit" className=" text-white  hover:bg-gray-400 outline-none border-2 border-white rounded-3xl px-8 py-2">Sign up</button>
+        </div>
+        </div>
+        </div>
       </div>
     );
 }
