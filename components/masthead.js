@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 // import Link from "next/link";
 
+
 export default class Masthead extends React.Component {
   render() {
     return (
@@ -29,5 +30,5 @@ export default class Masthead extends React.Component {
         </div>
       </div>
     );
-}
+  }
 }

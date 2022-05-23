@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Masthead from '../components/masthead'
 import Aboutus from '../components/aboutus'
 import Contact from '../components/contact'
+import SignIn from '../components/signin'
 
 export default function Home() {
   return (
@@ -14,8 +15,10 @@ export default function Home() {
       </Head>
 
       <Masthead />
+      <SignIn />
       <Aboutus />
       <Contact />
+      
     
       
       <footer className={styles.footer}>
