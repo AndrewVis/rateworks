@@ -23,15 +23,9 @@ return {
   }
 }
 
-// console.log(getStaticProps())
 
 
-export default function Gallery (){
-  const [data,SetData] = useState ([]) 
-  useEffect( () => {
-    getStaticProps.then(data => console.log(data) )
-    
-  }, [])
+export default function Broker ({data}){
    
     return (
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -45,24 +39,22 @@ export default function Gallery (){
 
 function BlurImage (props) {
   const [isLoading, setLoading] = useState(true)
+  console.log(props)
   return (
     <a href={props.id} className="group">
       <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200">
-        <Image alt=""
-        src={props.ImageSrc}
+        <img alt=""
+        src={props.item.ImageSrc}
         layout="fill"
         objectFit="cover"
         className={(
-        "group-hover:opacity-75 duration-700 ease-in-out",
-        isLoading
-        ? 'greyscale blur-2xl scale-110'
-        : 'greyscale-0 blur-0 scale-100'
+        "group-hover:opacity-75 duration-700 ease-in-out"
+    
         )}
-        onLoadingComplete={() => setLoading(false)}
       />
       </div>
-      <h3 className="mt-4 text-sm text-gray-700"></h3>
-      <p className="mt-1 text-lg font-medium text-gray-700"></p>
+      <h3 className="mt-4 text-sm text-gray-700">{props.item.Company}</h3>
+      <p className="mt-1 text-lg font-medium text-gray-700">{props.item.Rate}</p>
     </a>
   )
 }
