@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useState } from 'react';
 import { createClient } from "@supabase/supabase-js";
+import { async } from "postcss-js";
+import { data } from "browserslist";
 
 
 export async function getStaticProps() {
@@ -16,33 +18,38 @@ const { data } = await supabaseAdmin
 console.log(data)
 return {
   props: {
-    images: data,
+    data: data,
   },
   }
 }
 
+// console.log(getStaticProps())
 
 
-
-export default class Gallery extends React.Component {
-  render() {
+export default function Gallery (){
+  const [data,SetData] = useState ([]) 
+  useEffect( () => {
+    getStaticProps.then(data => console.log(data) )
+    
+  }, [])
+   
     return (
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-          <BlurImage />
+        {data.length >0 && data.map(item =><BlurImage item = {item}/>)}
         </div>
       </div>
     );
   }
-}
 
-function BlurImage () {
+
+function BlurImage (props) {
   const [isLoading, setLoading] = useState(true)
   return (
-    <a href="#" className="group">
+    <a href={props.id} className="group">
       <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200">
         <Image alt=""
-        src="/assets/logo.png"
+        src={props.ImageSrc}
         layout="fill"
         objectFit="cover"
         className={(
