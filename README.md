@@ -1,34 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+My goal for this project was to create a platform for financial instutions to be able to communicate more effectively with intermediaries that sell their products. Coming from the finance industry, I found there was a problem space that would ultimately create a better customer experience for anyone involved in certain transactions if there was a more effcient way for the two parties to communicate. Through my app Rate Works, financial institutions would be able to update the rapidly changing lending rates being given out in todays economies in real time for brokers to be offering their clients. 
+
+In the spirit of trying new things, I used a tech stack that was completely new to me. For the front end I used a combination of NEXT.js and Tailwind css which I found extremely fun to use; for the back end I used SupaBase which runs off a PostgreSQL database. I found it very fulfilling being able to pickup new technologies and frameworks and generate an entire project in such a short timeframe. 
+
+Moving forward I will be working on some additional functionalities and expanding the abilities of the application to be able to sustain more business generated from across other areas of the financial sector i.e Mutual Funds, Foreign exchange trading. 
+
+If you wanted to take a look, the directions are listed below! 
+
+& thank you for checking out my application :) 
+
+This is a [Next.js](https://nextjs.org/) App
 
 ## Getting Started
 
 First, run the development server:
-
 ```bash
 npm run dev
 # or
 yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+To reach the Sign in page add --> /signin to the end of the URL 
+To reach the broker page add --> /broker to the end of the URL
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
