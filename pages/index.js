@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Masthead from '../components/masthead'
 import Aboutus from '../components/aboutus'
 import Contact from '../components/contact'
+import Aboutustwo from '../components/aboutustwo'
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Masthead />
      
       <Aboutus />
+      <Aboutustwo />
       <Contact />
       
     
@@ -27,7 +29,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by 
+          Powered by Andrew
+        
          
         </a>
       </footer>

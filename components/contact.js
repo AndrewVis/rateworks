@@ -1,4 +1,4 @@
-import React /*{ useState, useCallback }*/ from 'react'
+import React from 'react'
 import Image from 'next/image'
 
 export default class Contact extends React.Component {
